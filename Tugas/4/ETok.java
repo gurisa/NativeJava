@@ -1,3 +1,8 @@
+/*
+  AppName: ETok (E-Toko) Versi 1.0
+  @Author: Raka Suryaardi Widjaja
+*/
+
 public class ETok {
   public static void main(String[] args) {
     Toko Gurisa = new Toko();
