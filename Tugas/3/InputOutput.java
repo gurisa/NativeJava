@@ -41,3 +41,4 @@ class InputOutput {
     System.out.print("\nJenis kelamin anda adalah " +  get_kelamin + " dan tinggi badan anda adalah " + tinggi + "cm.\n\n");
   }
 }
+
