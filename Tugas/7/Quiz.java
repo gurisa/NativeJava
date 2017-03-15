@@ -1,3 +1,16 @@
+/*
+  @Author: Raka Suryaardi Widjaja
+  Note: If you see this message, you're probably try to seeing my work.
+  Just in case if you're interested with my work, feel free to contact me @gurisa (https://gurisa.com).
+  We need to try our best! I hate cheating, it's hurt my pride!
+  Uh! maybe this quote could help you to change your mind (^_^)/
+
+  "Everybody is a genius, but if you judge a fish by its ability to climb a tree;
+  It will live its whole life believing, that it's stupid."
+
+  -Albert Einstein
+*/
+
 import java.util.Scanner;
 
 public class Quiz {
@@ -31,7 +44,7 @@ public class Quiz {
     System.out.println("Mulai menjalankan aplikasi.");
     System.out.println("Catatan: Perhatikan pengaturan 'seperator' dan 'decimal delimiter'.");
     System.out.println("\n--------------------------------------\n");
-    
+
     do {
       System.out.print("Masukan IP Mahasiswa                : ");
       grade_points = input.nextFloat();
