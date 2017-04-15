@@ -7,6 +7,7 @@ public class Toko {
   protected int counter = 0;
   protected final int max_barang = 100;
   protected Barang[] barang = new Barang[max_barang];
+	//protected brg[] barang = new brg[max_barang];
 		
   Toko() {
     //konstruktor untuk inisialisasi Toko.

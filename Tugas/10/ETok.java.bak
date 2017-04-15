@@ -172,7 +172,7 @@ public class ETok extends Toko {
                  //barang_2.informasi_barang();                 
                  Gurisa.informasi_barang(Gurisa.counter);
                  break;
-        case 4 : Gurisa.tambah_barang(Gurisa.counter); break;
+        case 4 : Gurisa.tambah_barang(); break;
         case 5 : trx++; belanja_tunai(trx); break;
         case 6 : Gurisa.tentang(); break;
         default : break;
