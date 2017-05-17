@@ -1,0 +1,27 @@
+public class Enkapsulasi {
+	private String NIM, Nama;
+	
+	public String getNIM() {
+		return NIM;
+	}
+	
+	public void setNIM(String NIM) {
+		this.NIM = NIM;
+	}
+	
+	private String getNama() {
+		return Nama;
+	}
+	
+	private void setNama(String Nama) {
+		this.Nama = Nama;
+	}
+	
+	public String get_Nama() {
+		return getNama();
+	}
+	
+	public void set_Nama(String Nama) {
+		setNama(Nama);
+	}	
+}
