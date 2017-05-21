@@ -1,0 +1,5 @@
+Abstraction
+Teknik yang memungkinkan untuk membuat kelas abstrak (tidak nyata), kelas abstrak ini berguna untuk menyimpan pendefinisian atribut dan method, berbeda dengan teknik overriding teknik abstraksi benar-benar hanya mendefinisikan atribut atau method saja untuk selanjutnya digunakan pada kelas turunannya.
+
+Encapsulation
+Teknik yang memungkinkan untuk membatasi akses terhadap suatu kelas, membatasi akses dalam arti untuk setiap objek yang dinstansiasi, objek tersebut tidak bisa secara langsung menggunakan atribut atau method (umumnya akses atribut) yang ada pada kelas tersebut, melainkan harus mengakses terlebih dahulu method khusus (getter & setter) yang tersedia pada kelas tersebut.
