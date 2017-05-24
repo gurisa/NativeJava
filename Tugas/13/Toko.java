@@ -4,7 +4,9 @@ public abstract class Toko {
   protected boolean kredit;
   protected int counter = 0;
   protected final int max_barang = 100;
+  protected final int max_konsumen = 100;
   protected Barang[] barang = new Barang[max_barang];
+  protected Konsumen[] konsumen = new Konsumen[max_konsumen];
 
   Toko() {
     //konstruktor untuk inisialisasi Toko.

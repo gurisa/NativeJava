@@ -9,6 +9,7 @@ public class ETok extends Toko {
   private static String AppName, AppVers, AppAuth;
   private static Scanner input = new Scanner(System.in);
   private static ETok Gurisa = new ETok();
+  private static Galat Catcher = new Galat();
 
   ETok() {
     //konstruktor inisialisasi 'engine' aplikasi ETok.
@@ -26,9 +27,15 @@ public class ETok extends Toko {
     */
   }
 
+  public void tentang() { //tentang ETok, method mandiri
+    System.out.print("--- " + AppName + " ---\n\n");
+    System.out.print("AppName     : " + AppName + "\n");
+    System.out.print("AppVersion  : " + AppVers + "\n");
+    System.out.print("AppAuthor   : " + AppAuth + "\n");
+    System.out.print("\n");
+  }
+
   public String rewrite_kredit(boolean status) {//override dari method parent
-    /*  representasi status pembayaran kredit di toko
-        dengan sedikit perbedaan kondisi true dan falsenya. */
     String text_status = "Ya";
     if (!status) {
       text_status = "Tidak";
@@ -49,6 +56,22 @@ public class ETok extends Toko {
     }
     return text_status;
   }
+
+	public boolean barangExist(int kode, int max) {
+		boolean res = false;
+		if ((kode >= 0) && (kode < max)) {
+			res = true;
+		}
+		return res;
+	}
+
+	public boolean barangAvailable(int max) {
+		boolean res = false;
+		if (max > 0) {
+			res = true;
+		}
+		return res;
+	}
 
   public void get_barang(int kode) {
     System.out.print("\n=== INFORMASI BARANG ===\n\n");
@@ -76,7 +99,7 @@ public class ETok extends Toko {
 		  }
     }
     else {
-    	System.out.print("Tidak ada data barang.\n\n");
+      Catcher.Message("NOTEXIST");
     }
   }
 
@@ -108,14 +131,8 @@ public class ETok extends Toko {
     System.out.print("Pemilik Toko      : " + pemilik + "\n");
     System.out.print("Pembayaran Kredit : " + rewrite_kredit(kredit) + "\n");
     System.out.print("Status Toko       : " + rewrite_status(status) + "\n");
-    System.out.print("======================\n\n");//ada tambahan garis ini saja :3
+    System.out.print("======================\n\n");
     System.out.print("\n");
-    /*
-      bandingkan dengan method di parent,
-      method di parent tidak ada garis
-      penutup berupa ====== pada akhir informasi toko.
-    */
-    //super.informasi_toko();
   }
 
   public void set_toko() {
@@ -127,56 +144,74 @@ public class ETok extends Toko {
     System.out.print("Status Toko       : ");Gurisa.status = input.next().charAt(0);
   }
 
-  public static void menu_belanja(int jumlah_transaksi) { //fitur belanja
-    Belanja tunai = new Belanja();
-    tunai.test_tunai();
-    tunai.test_kredit();
+  public void menu_konsumen() { //menu konsumen, method mandiri
+    byte menu;
+    boolean exit = false;
+
+    do {
+      System.out.print("=====================\n");
+      System.out.print("=== " + AppName + " ===\n");
+      System.out.print("=== MENU KONSUMEN ===\n");
+      System.out.print("=====================\n\n");
+      System.out.print("1. Lihat Informasi Pelanggan\n");
+      System.out.print("2. Tambah Informasi Pelanggan\n");
+      System.out.print("3. Ubah Informasi Pelanggan\n");
+      System.out.print("4. Hapus Informasi Pelanggan\n");
+      System.out.print("0. Kembali\n\n");
+      System.out.print("Pilih Menu : ");
+      while (!input.hasNextByte()) {
+        System.out.print("Pilih Menu : ");
+        input.next();
+      }
+      menu = input.nextByte();
+      switch (menu) {
+        case 0 : exit = true; break;
+        case 1 :  break;
+        case 2 :  break;
+        case 3 :  break;
+        case 4 :  break;
+        default : break;
+      }
+    } while ((menu >= 0 || menu <= 4) && (!exit));
+  }
+
+  public void menu_belanja(int jumlah_transaksi, int max_barang) { //menu belanja, method mandiri
+    Transaksi belanja = new Transaksi();
     char confirm = 'Y';
-    String kode_barang;
+    int kode_barang;
     int jumlah_barang, count_jumlah_barang = 0;
     int uang_dibayarkan, total_biaya = 0, sum_harga_barang = 0;
+		//do {
+    	System.out.print("\n============\n");
+	    System.out.print("|| TRX/" + jumlah_transaksi + " ||\n");
+	    System.out.print("============\n\n");
+	    do {
+	      System.out.print("Kode Barang   : "); kode_barang = input.nextInt();
+	      while (!Gurisa.barangExist(kode_barang, max_barang)) {
+	      	System.out.print("Data Barang Tidak Ditemukan.\n");
+	      	System.out.print("Kode Barang   : "); kode_barang = input.nextInt();
+	      }
+	      System.out.print("Nama Barang   : " + barang[kode_barang].getNama() + "\n");
+	      System.out.print("Jumlah Barang : "); jumlah_barang = input.nextInt();
+	      System.out.print("Harga Barang  : "+ barang[kode_barang].getHarga() + "\n");
+	      total_biaya = belanja.biaya_barang(barang[kode_barang].getHarga(), jumlah_barang);
+	      System.out.print("Total Biaya   : " + total_biaya + "\n\n");
+	      System.out.print("Tambahkan barang lagi [Y/T] : ");confirm = input.next().charAt(0);
+	      System.out.print("-------------------------------\n");
+	      count_jumlah_barang += jumlah_barang;
+	      sum_harga_barang += total_biaya;
+	    } while (Character.toString(confirm).matches("^[yY]*$"));//regular expression, regex
 
-    System.out.print("\n======\n");
-    System.out.print("TRX/" + jumlah_transaksi + "\n");
-    System.out.print("======\n\n");
-    do {
-      //kode_barang = "";
-      //System.out.print("Kode Barang   : ");
-      //kode_barang = input.nextLine(); //ceritanya cek dari database.
-      /*
-      System.out.print("Nama Barang   : " + barang_1.nama + "\n");//ceritanya cek dari database.
-      System.out.print("Jumlah Barang : "); jumlah_barang = input.nextInt();
-      System.out.print("Harga Barang  : " + barang_1.harga + "\n"); //ceritanya cek dari database.
-      total_biaya = tunai.biaya_barang(barang_1.harga, jumlah_barang);
-      System.out.print("Total Biaya   : " + total_biaya + "\n\n");
-			*/
-      System.out.print("Tambahkan barang lagi [Y/T] : ");confirm = input.next().charAt(0);
-      System.out.print("-------------------------------\n");
-      //count_jumlah_barang += jumlah_barang;
-      //sum_harga_barang += total_biaya;
-      if (confirm != 'Y' || confirm != 'y') {
-        break;
-      }
-    } while (confirm == 'Y' || confirm == 'y');
-
-    System.out.print("\nTotal Belanja   : " + count_jumlah_barang + " Barang = Rp" + sum_harga_barang);
-    System.out.print("\nUang Dibayarkan : "); uang_dibayarkan = input.nextInt();
-    System.out.print("\nKembalian       : " + tunai.kembalian(uang_dibayarkan, sum_harga_barang));
-    System.out.print("\n\n");
-    System.out.print("~~~ ETok, kenyamanan tiada henti(^_^)/ ~~~\n");
-    System.out.print("\n");
+	    System.out.print("\nTotal Belanja   : " + count_jumlah_barang + " Barang \t\t Rp" + sum_harga_barang);
+	    System.out.print("\nUang Dibayarkan : "); uang_dibayarkan = input.nextInt();
+	    System.out.print("Kembalian       : " + belanja.kembalian(uang_dibayarkan, sum_harga_barang));
+	    System.out.print("\n\n");
+	    Catcher.Message("JARGON");
+	    System.out.print("\n");
+  	//} while ();
   }
 
-  public void tentang() { //tentang ETok, method mandiri
-    System.out.print("--- " + AppName + " ---\n\n");
-    System.out.print("AppName     : " + AppName + "\n");
-    System.out.print("AppVersion  : " + AppVers + "\n");
-    System.out.print("AppAuthor   : " + AppAuth + "\n");
-    System.out.print("\n");
-  }
-
-  public static void menu_toko() { //menu barang, method mandiri
-    int kode;
+  public void menu_toko() { //menu toko, method mandiri
     byte menu;
     boolean exit = false;
 
@@ -198,11 +233,12 @@ public class ETok extends Toko {
         case 0 : exit = true; break;
         case 1 : Gurisa.get_toko(); break;
         case 2 : Gurisa.set_toko(); break;
+        default : break;
       }
     } while ((menu >= 0 || menu <= 2) && (!exit));
   }
 
-  public static void menu_barang(int max) { //menu barang, method mandiri
+  public void menu_barang(int max) { //menu barang, method mandiri
     int kode;
     byte menu;
     boolean exit = false;
@@ -225,22 +261,28 @@ public class ETok extends Toko {
       switch (menu) {
         case 0 : exit = true; break;
         case 1 : Gurisa.get_all_barang(max); break;
-        case 2 : System.out.print("\nMasukan Kode Barang : ");
-                 while (!input.hasNextInt()) {
-                   System.out.print("Masukan Kode Barang : ");
-                   input.next();
-                 }
-                 kode = input.nextInt();
-                 if ((kode >= 0) && (kode < max)) {
-                   Gurisa.get_barang(kode);
+        case 2 : if (barangAvailable(max)) {
+                    System.out.print("\nMasukan Kode Barang : ");
+                    while (!input.hasNextInt()) {
+                      System.out.print("Masukan Kode Barang : ");
+                      input.next();
+                    }
+                    kode = input.nextInt();
+                    if (Gurisa.barangExist(kode, max)) {
+                      Gurisa.get_barang(kode);
+                    }
+                    else {
+                      Catcher.Message("NOTEXIST");
+                    }
                  }
                  else {
-                   System.out.print("Data Barang Tidak Ditemukan.\n\n");
+                   Catcher.Message("NOTEXIST");Catcher.Message("ADDDATA");
                  }
                  break;
         case 3 : Gurisa.counter = Gurisa.add_barang(max);
                  max = Gurisa.counter;
                  break;
+				default : break;
       }
     } while ((menu >= 0 || menu <= 3) && (!exit));
   }
@@ -254,8 +296,9 @@ public class ETok extends Toko {
       System.out.print("=== " + AppName + " ===\n\n");
       System.out.print("1. Toko\n");
       System.out.print("2. Barang\n");
-      System.out.print("3. Belanja\n");
-      System.out.print("4. Tentang\n");
+      System.out.print("3. Konsumen\n");
+      System.out.print("4. Belanja\n");
+      System.out.print("5. Tentang\n");
       System.out.print("0. Keluar\n\n");
       System.out.print("Pilih Menu : ");
       while (!input.hasNextByte()) {
@@ -267,11 +310,18 @@ public class ETok extends Toko {
         case 0 : exit = true; break;
         case 1 : Gurisa.menu_toko(); break;
         case 2 : Gurisa.menu_barang(Gurisa.counter); break;
-        case 3 : trx++; menu_belanja(trx); break;
-        case 4 : Gurisa.tentang(); break;
+        case 3 : Gurisa.menu_konsumen(); break;
+        case 4 : if (Gurisa.barangAvailable(Gurisa.counter)) {
+				        	 trx++; Gurisa.menu_belanja(trx, Gurisa.counter);
+				         }
+				         else {
+				         	 Catcher.Message("NOTEXIST");Catcher.Message("ADDDATA");
+				        }
+         				 break;
+        case 5 : Gurisa.tentang(); break;
         default : break;
       }
 
-    } while ((menu >= 0 || menu <= 4) && (!exit));
+    } while ((menu >= 0 || menu <= 5) && (!exit));
   }
 }

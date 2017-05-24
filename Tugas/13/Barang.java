@@ -25,5 +25,6 @@ public class Barang {
 		this.jumlah = jumlah;
 		this.harga = harga;
 	}
+	
 	/* Konsep enkapsulasi getter & setter */
 }
