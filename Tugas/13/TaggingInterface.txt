@@ -1,1 +1,10 @@
 Tagging interface
+
+Tagging interface adalah sebuah interface tanpa metode abstrak di dalamnya,
+dengan kata lain isi dari tagging interface hanyalah berupa atribut.
+
+Tagging interface umumnya digunakan untuk dapat diimplementasikan pada interface
+atau kelas lainnya. Hal ini dilakukan untuk membuat suatu interface yang lebih
+spesifik dan untuk menanggulangi keterbatasan penggunaan interface, yakni interface
+terbatas hanya dapat digunakan di kelas kongkrit dengan cara menulis ulang semua
+metode abstrak yang ada (kasus hanya ingin menggunakan sebagian metode).
