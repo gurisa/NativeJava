@@ -30,4 +30,4 @@ Changelog:
     Penambahan kelas konsumen dan teknik enkapsulasi.
 1.7 Update dari Tugas 12.
     Perbaikan dan penyempurnaan fitur.
-    Penambahan teknik interface.
+    Penambahan teknik interface dan implementasinya.
