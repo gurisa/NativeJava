@@ -9,7 +9,7 @@ public class ETok extends Toko {
   private static String AppName, AppVers, AppAuth;
   private static Scanner Input = new Scanner(System.in);
   private static ETok Gurisa = new ETok();
-  private static Galat<String> Catcher = new Galat<String>();
+  private static Galat Catcher = new Galat();
   private static Operations<String> strSys = new Operations<String>();
 
   ETok() {
@@ -100,7 +100,7 @@ public class ETok extends Toko {
 		  }
     }
     else {
-      Catcher.printMessage("NOTEXIST");
+      Catcher.Message("NOTEXIST");
     }
   }
 
@@ -207,7 +207,7 @@ public class ETok extends Toko {
 	    System.out.print("\nUang Dibayarkan : "); uang_dibayarkan = Input.nextInt();
 	    System.out.print("Kembalian       : " + belanja.kembalian(uang_dibayarkan, sum_harga_barang));
 	    System.out.print("\n\n");
-	    Catcher.printMessage("JARGON");
+	    Catcher.Message("JARGON");
 	    System.out.print("\n");
   	//} while ();
   }
@@ -273,11 +273,11 @@ public class ETok extends Toko {
                       Gurisa.get_barang(kode);
                     }
                     else {
-                      Catcher.printMessage("NOTEXIST");
+                      Catcher.Message("NOTEXIST");
                     }
                  }
                  else {
-                   Catcher.printMessage("NOTEXIST");Catcher.printMessage("ADDDATA");
+                   Catcher.Message("NOTEXIST");Catcher.Message("ADDDATA");
                  }
                  break;
         case 3 : Gurisa.counter = Gurisa.add_barang(max);
@@ -317,7 +317,7 @@ public class ETok extends Toko {
 				        	 trx++; Gurisa.menu_belanja(trx, Gurisa.counter);
 				         }
 				         else {
-				         	 Catcher.printMessage("NOTEXIST");Catcher.printMessage("ADDDATA");
+				         	 Catcher.Message("NOTEXIST");Catcher.Message("ADDDATA");
 				        }
          				 break;
         case 5 : Gurisa.tentang(); break;
