@@ -1,6 +1,6 @@
 public class Galat implements StrukturGalat {
 
-  public void Message(String kode) {
+  public void message(String kode) {
     switch (kode) {
       case "NOTEXIST": System.out.print("Data tidak tersedia.\n"); break;
       case "ADDDATA": System.out.print("Silahkan tambah data terlebih dahulu.\n"); break;

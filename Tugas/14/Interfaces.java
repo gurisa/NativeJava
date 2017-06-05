@@ -1,10 +1,14 @@
 interface StrukturGalat {
-  public void Message(String kode);
+  public void message(String kode);
 }
 
 interface StrukturKonsumen {
   public String rewriteGender(char kode);
-  public String konsumenExist(char kode);
+  //public String konsumenExist(char kode);
+}
+
+interface Konfigurasi {
+	private String Name, Version, Author;
 }
 
 interface Belanja {

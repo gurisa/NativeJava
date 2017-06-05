@@ -2,7 +2,8 @@ public abstract class Toko {
   protected String nama, pemilik, alamat;
   protected char status;
   protected boolean kredit;
-  protected int counter = 0;
+  protected int counter_barang = 0;
+  protected int counter_konsumen = 0;
   protected final int max_barang = 100;
   protected final int max_konsumen = 100;
   protected Barang[] barang = new Barang[max_barang];
