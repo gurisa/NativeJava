@@ -179,8 +179,83 @@ b. Setter = Menyimpan data dari kelas yang memiliki akses private
 c. Method Static = Bisa diakses tanpa menggunakan objek (direct)
 d. Method Final = Tidak bisa diubah dari luar kelas
 2) Overriding = Modifikasi method turunan dari super kelas
-- tidak final
-- parameter sama (nama dan jumlah)
-- tidak restrictive
-Folder Github: Tugas/10
+- Tidak final
+- Parameter sama (nama dan jumlah)
+- Tidak restrictive
+Folder Github: Tugas/10, Latihan/6
+---------------------------------
+Pertemuan: 11
+Materi: Abstraction
+Pembahasan:
+1) Abstraksi = Menyembunyikan detil proses (kulit)
+- Keyword abstract
+- Tidak dapat diinstansiasi
+- Tidak memiliki implementasi method
+- Pada kelas abstrak, bisa memuat kelas konkrit
+- Tidak dapat diinstansiasi langsung
+- Turunkan ke kelas lain (konkrit), seluruh metode abstrak harus diimplementasi
+a. Method Abstract
+b. Class Abstract
+Folder Github: Tugas/11, Latihan/7
+---------------------------------
+Pertemuan: 12
+Materi: Pengenalan Abstraksi
+Pembahasan: Studi Kasus
+Folder Github: Latihan/5
+---------------------------------
+Pertemuan: 13
+Materi: Polimorphism
+Pembahasan: 
+1) Polimorfisme = Kemampuan objek dapat memiliki banyak bentuk (kelas)
+- Semua objek pada java polimorfik, karena merupakan turunan kelas Object.
+- Cls1 obj = new Cls2()
+Folder Github: 
+---------------------------------
+Pertemuan: 14
+Materi: Interface
+Pembahasan:
+1) Interface = reference type, mirip dengan kelas, berisi kumpulan metode abstrak, keyword interface
+- Tidak bisa diinstansiasi
+- Tidak memiliki konstruktor
+- Semua metode abstrak
+- Tidak ada instance variable, kecuali var static dan final
+- Kelas bisa implements beberapa interface
+- Interface Tidak bisa implements interface
+Folder Github: Tugas/13
+---------------------------------
+Pertemuan: 15
+Materi: Encapsulation
+Pembahasan:
+1) Enkapsulasi
+- Membungkus data dan fungsi menjadi suatu unit (data-hidding)
+- Atribute kelas = private
+- Akses data dengan methode khusus getter setter (public)
+2) Getter Setter
+Folder Github: Tugas/14, Latihan/6, Tugas/Raka-10115253-EncapIntegration
+---------------------------------
+Pertemuan: 16
+Materi: Generic Class dan Generic Method
+Pembahasan:
+1) Kelas Generik
+- Kelas umum/universal
+- Tidak memiliki tipe data dan fungsi di dalamnya (set general)
+- Diturunkan sebagai parameter tipe class A <T> {}, E=Element, K=Key, N=Number, T=Type, V=Value
+- Gen<T> obj = new Gen<>()
+2) Metode Generik
+- Tipe parameter method (generik)
+- public <T> void method(T[] x) {}
+Folder Github: Tugas/15
+---------------------------------
+Pertemuan: 17
+Materi: Package
+Pembahasan:
+1) Paket
+- Menghindari konflik penamaan kelas, interface, dsb
+- Akses kontrol dan saling berhubungan satu sama lain
+a. Paket bawaan = java.lang, java.io
+b. Paket bentukan
+- package nama_package;
+- javac -d . nama_file.java
+- java nama_package.nama_kelas
+Folder Github: Tugas/16
 ---------------------------------
