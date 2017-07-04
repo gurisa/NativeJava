@@ -1,0 +1,186 @@
+---------------------------------
+NIM	: 10115253
+Nama	: Raka Suryaardi Widjaja
+Tugas	: Review Materi
+Kelas	: Pemrograman Lanjut - 11
+Github	: gurisa/ProLan-11
+---------------------------------
+Pertemuan: 
+Materi: 
+Pembahasan:
+Folder Github:
+---------------------------------
+Pertemuan: 1
+Materi: Pengenalan dan Sintaks Java
+Pembahasan:
+1) Pendahuluan Java
+a. Bahasa Pemrograman
+b. Aplikasi
+c. Development Environment
+d. Deployment Environment
+e. Prinsip Java, "Write once, run anywhere"
+2) Ruang Lingkup Java
+a. Java Runtime Environment = Menjalankan Program Java
+b. Java Development Kit = Membuat Program Java
+c. Java Virtual Machine = Tempat Menjalankan Program Java
+3) Penulisan
+a. Variabel, Kelas dan Metode = case sensitive
+b. Nama kelas = diawali huruf besar (saran) dan harus sama dengan nama file .java
+c. Nama metode = diawali huruf kecil (saran)
+d. Metode utama = dipanggil setiap kali program dieksekusi
+e. Identifier = A-Z, a-z, $, _
+4) Modifier
+a. Access Modifier = default, public, protected, private
+b. Access Non-Modifier = final, abstract, etc
+5) Komentar
+a. Single-line = //
+b. Multi-line = /* */
+Folder Github: Tugas/1
+---------------------------------
+Pertemuan: 2
+Materi: Instalasi JDK, Netbeans, Program Java dan Setting Environment
+Pembahasan:
+1) Mengenal apa itu JDK
+2) Menginstal JDK
+3) Menginstal Netbeans (IDE)
+4) Membuat Program Java
+a. Dengan Netbeans
+b. Tanpa Netbeans
+5) Mengeksekusi Program Java
+a. Dengan Netbeans
+b. Tanpa Netbeans = Kompilasi manual
+6) Setting Environment Java
+a. Menambahkan lokasi JDK dipasang.
+Folder Github: Tugas/1, Tugas/2
+---------------------------------
+Pertemuan: 3
+Materi: Input/Output (I/O)
+Pembahasan:
+1) Output
+2) Input
+a. Import Utilitas Scanner
+b. Instansiasi Scanner
+c. Penyesuaian Scanner (tipe data dan cara akses)
+- String = .nextLine()
+- Char = .next().charAt(0)
+- Int = .nextInt()
+- Boolean = .nextBoolean()
+Folder Github: Tugas/3
+---------------------------------
+Pertemuan: 4
+Materi: Tipe Data Java
+Pembahasan:
+1) Jenis Tipe Data
+a. Primitif = 
+- byte (-128, 127)
+- int (-2.147.483.648, 2.147.483.647)
+- short (-32.768, 32.767)
+- long (-9.223.372.036.854.775.808, -9.223.372.036.854.775.807)
+- float (-3.402.823.47E+38, 3.402.823.47E+38), akhiri dengan f, 3.14f
+- double (-1.797.693.134.862.315.70E+308, 1.797.693.134.862.315.70E+308), akhiri dengan d, 3.14d
+- char (1 digit)
+- boolean (true/false, 1/0)
+b. Objek (Bentukan) = 
+- String
+- Calender
+- Date
+Folder Github: Tugas/4, Latihan/3
+---------------------------------
+Pertemuan: 5
+Materi: Variabel dan Operator Java
+Pembahasan:
+1) Variabel = Tempat menampung nilai dalam memori
+2) Jenis Variabel
+a. Lokal = Digunakan dalam satu sub-segmen (method), tidak dapat menggunakan modifier
+b. Instance = Digunakan dalam kelas dan di luar sub-segmen, dapat menggunakan modifier
+- Metode Static-> Obj.Var
+- Metode Non-Static-> langsung
+c. Static = Variabel kelas, tidak bisa diubah, keyword static, biasa digunakan untuk kelas lain
+3) Konstanta = Tidak bisa diubah, keyword final
+4) Operator
+a. Aritmatika = +, -, *, /, %, ++, --
+b. Relasional = >, <, ==, !=, >=, <=
+c. Logika = &&, ||, !
+d. Assignment = +=, -=, =, *=, /=, %=
+e. Miscellaneous
+- Kondisional = ((x == 1)? 11:10)
+- Instance Of = boolean var = obj1 instanceof obj2
+Folder Github: Tugas/5, Latihan/4
+---------------------------------
+Pertemuan: 6
+Materi: Konsep Dasar PBO, Kelas Objek, Constructor This Atribute
+Pembahasan:
+1) Pemrograman Berorientasi Objek
+a. Analysis
+b. Design
+c. Programming
+d. Testing
+2) Prosedural vs OO
+a. Type - Class
+b. Variable - Object
+c. Local, Global - Public, Private, Protected
+d. Class
+3) Teknik PBO
+a. Abstraksi
+b. Enkapsulasi
+c. Generic
+d. Inheritance
+e. Polymorphism
+f. Generalization, Specialization
+g. Component
+h. Pattern
+4) Contoh Bahasa PBO
+- Java, Smalltalk, Eiffel (Pure-OO)
+- C++ (Proc-OO)
+5) Konsep PBO
+a. Kelas = Klasifikasi Objek
+b. Objek = Perwujudan Kelas
+c. Method = Operasi, Fungsi
+d. Atribut = Data
+6) Access Modifier
+a. Public = Dapat diakses dari kelas manapun
+b. Protected = Dapat diakses dari kelas itu dan turunannya
+c. Private = Hanya dapat diakses dari kelas itu sendiri
+7) Method = Kumpulan baris program (sub-segmen)
+a. Return Value (Fungsi)
+b. Void (Prosedur)
+8) Method Overloading = Sama nama tapi beda parameter
+9) Constructor = Method yang dieksekusi saat objek dibuat (instansiasi), punya nama yang sama dengan kelas
+10) This = Referensi Objek, Instance variable/method/constructor, Membedakan akses global dan lokal (var)
+11) Atribute = Representasi data dari kelas, akses melalui obj, konstanta termasuk atribut
+Folder Github: Tugas/6
+---------------------------------
+Pertemuan: 7
+Materi: Quiz
+Pembahasan: Studi Kasus 1 - Kalkulator
+Folder Github: Tugas/7
+---------------------------------
+Pertemuan: 8
+Materi: Inheritance
+Pembahasan: 
+1) Pewarisan (Inheritance) = Menurunkan method dan atribute dari satu kelas ke kelas lainnya
+2) Keyword Super = Membedakan atribut, method dari kelas ayah dan anak
+3) Hubungan Kelas
+a. Has a (Instansiasi Obj)
+b. Gen-Spec (Extends)
+Folder Github: Tugas/8, Tugas/10
+---------------------------------
+Pertemuan: 9
+Materi: Quiz
+Pembahasan: Studi Kasus 2 - Nilai
+Folder Github: Tugas/9
+---------------------------------
+Pertemuan: 10
+Materi: Modifiers, Overriding
+Pembahasan: 
+1) Modifiers dan Method
+a. Getter = Mengambil data dari kelas yang memiliki akses private
+b. Setter = Menyimpan data dari kelas yang memiliki akses private
+c. Method Static = Bisa diakses tanpa menggunakan objek (direct)
+d. Method Final = Tidak bisa diubah dari luar kelas
+2) Overriding = Modifikasi method turunan dari super kelas
+- tidak final
+- parameter sama (nama dan jumlah)
+- tidak restrictive
+Folder Github: Tugas/10
+---------------------------------
